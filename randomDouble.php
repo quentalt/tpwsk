@@ -1,25 +1,10 @@
 <?php
-
-// Fonction principale
-function main() {
-    // Génération d'un nombre aléatoire
-    $randomNumber = rand(1, 100);
-
-    // Doublement du nombre aléatoire
-    $doubledNumber = $randomNumber * 2;
-
-    // Création d'une tableau associatif équivalent à un dictionnaire en PHP
-    $arrayResult = array('resultat' => $doubledNumber, 'original' => $randomNumber);
-
-    // Retourne le résultat
-    return $arrayResult;
+function main(array $args) : array {
+    $rand = rand(0, 100) / 100;
+    $double = $rand * 2;
+    return [
+        "original" => $rand,
+        "résultat" => $double
+    ];
 }
-
-// Appel de la fonction principal
-$resulMain = main();
-
-// Affichage des résultats
-foreach ($resulMain as $key => $value) {
-    echo ucfirst($key) . ": " . $value . "
-";
-}
+?>
